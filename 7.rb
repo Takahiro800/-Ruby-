@@ -1,13 +1,13 @@
 class User
-  def initialize(name, age)
-    puts "name: #{name}, age: #{age}"
+  def initialize(name)
+    @name = name
   end
 
   def hello
-    "Hello!"
+    puts "Hello, I am #{@name}"
   end
 end
 
 
-user = User.new('Alice', 20)
+user = User.new('Alice')
 user.hello
