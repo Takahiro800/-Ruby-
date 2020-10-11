@@ -2,6 +2,8 @@
 require 'pry'
 
 module Loggable
+  private
+
   def log(text)
     puts "[LOG] #{text}"
   end
@@ -30,3 +32,5 @@ product.title
 
 user = User.new
 user.name
+
+product.log 'public?'
