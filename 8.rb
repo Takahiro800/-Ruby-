@@ -1,8 +1,6 @@
 # 第８章モジュールを理解する
-require 'pry'
 
 module Loggable
-  private
 
   def log(text)
     puts "[LOG] #{text}"
@@ -10,27 +8,14 @@ module Loggable
 end
 
 class Product
-  include Loggable
+  extend Loggable
 
-  def title
-    log 'title is callded.'
-    'A great movie'
-  end
-end
-
-class User
-  include Loggable
-
-  def name
-    log 'name is called.'
-    'Alice'
+  def self.create_products(names)
+    log 'create_products is called.'
   end
 
 end
-product = Product.new
-product.title
 
-user = User.new
-user.name
+Product.create_products([])
 
-product.log 'public?'
+Product.log('Hello.')
