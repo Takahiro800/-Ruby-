@@ -7,6 +7,10 @@ class User
     @name
   end
 
+  def name=(value)
+    @name = value
+  end
+
   def hello
     # shuffled_nameはローカル変数
     # shuffled_name = @name.chars.shuffle.join
@@ -16,4 +20,5 @@ end
 
 
 user = User.new('Alice')
-user.hello
+user.name = 'Bob'
+puts user.name
