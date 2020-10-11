@@ -5,7 +5,7 @@ class User
 
   def hello
     # shuffled_nameはローカル変数
-    shuffled_name = @name.chars.shuffle.join
+    # shuffled_name = @name.chars.shuffle.join
     puts "Hello, I am #{shuffled_name}"
   end
 end
