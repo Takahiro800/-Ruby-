@@ -1,9 +1,13 @@
 class User
 
-  attr_accessor :name
-
   def initialize(name)
     @name = name
+  end
+
+  def self.create_users(names)
+    names.map do |name|
+      User.new(name)
+    end
   end
 
 
@@ -14,6 +18,11 @@ class User
   end
 end
 
+names = ['Alice', 'Bob', 'Carol']
+users = User.create_users(names)
+users.each do |user|
+  puts user.hello
+end
 
 user = User.new('Alice')
 user.name = 'Bob'
