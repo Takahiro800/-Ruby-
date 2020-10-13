@@ -19,6 +19,21 @@ class User
     #直接インスタンス変数の@nameにアクセスする
     "My name is #{@name} "
   end
+
+  def rename_to_bob
+    # selfなしでname=メソッドは呼べない
+    name = 'Bob'
+  end
+
+  def rename_to_carol
+    self.name = "Carol"
+  end
+
+  def rename_to_dave
+    # 直接インスタンス変数を書き換える
+    @name = 'Dave'
+  end
+
 end
 
 user = User.new('Alice')
