@@ -8,8 +8,18 @@ class GateTest < MiniTest::Test
     juso = Gate.new(:juso)
     ticket = Ticket.new(150)
     umeda.enter(ticket)
-    # 「湯津城できる」という結果を期待しているので、juso.exit(ticket) の戻り値はtrueになるはず。
+    # 「出場できる」という結果を期待しているので、juso.exit(ticket) の戻り値はtrueになるはず。
     # それを検証するために最後にassertメソッドで戻り値がtrueになることを検証している
     assert juso.exit(ticket)
   end
+
+  def test_umeda_to_mikuni_when_fare_is_not_enough
+    umeda = Gate.new(:umeda)
+    mikuni = Gate.new(:mikuni)
+
+    ticket = Ticket.new(150)
+    umeda.enter(ticket)
+    refute mikuni.exit(ticket)
+  end
+
 end
